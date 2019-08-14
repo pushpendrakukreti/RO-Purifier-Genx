@@ -1,0 +1,2437 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="alexaVerifyID" content="YhS_FNgxiBwmZ2xQYrmblD6j5U8">
+    <title>GenX RO Systems - Healthcare Products & Home Appliances Company </title>
+    <meta name="description" content="GenX offers best range of healthcare products and home appliances including Water Purifiers, Air purifiers, Vacuum Cleaners and Modern Cooking Appliances. We are most trusted brand in healthcare and home appliances vertical.">
+    <meta name="keywords" content="GenX purifier, GenX purifiers, water filters, GenX products, GenX purifiers, GenX purifiers prices, GenX RO water purifier, GenX vegetable purifier, GenX water softeners, fruit purifier">
+    <meta property="og:title" content="Leading Home Appliances and Healthcare Products Company - GenX RO System">
+    <meta property="og:description" content="GenX is the most trusted brand is home appliances and healthecare products in world. It provides the Water Purifiers, Air purifiers, Vacuum Cleaners, Slow Juicer, Veg Purifiers, Pasta and Noodle Maker, etc.">
+    <meta property="og:url" content="default.aspx">
+    <meta property="og:image" content="images/logo/Healthcare-logo-with-tagline.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Leading Home Appliances and Healthcare Products Company - GenX RO System">
+    <meta name="twitter:description" content="GenX is the most trusted brand is home appliances and healthcare products in world. It provides the Water Purifiers, Air purifiers, Vacuum Cleaners, Slow Juicer, Veg Purifiers, Pasta and Noodle Maker, etc.">
+    <meta name="twitter:image" content="images/logo/Healthcare-logo-with-tagline.png">
+    <link href="css/responsivemultimenu2787.css" rel="stylesheet" />
+    <meta http-equiv="content-language" content="en-in">
+    <link rel="canonical" href="default.aspx" />
+    <link rel="stylesheet" href="css/fractionslider.css" />
+    <meta property="og:locale" content="en_IN">
+    <meta property="og:type" content="website" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <!--<meta http-equiv="Content-Security-Policy" content="script-src 'self';">  -->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+    <script>
+        $('li').hover(function () {
+            $('#mainMenu').each(function () {
+                var item = $(this)[0];
+                $(this).animate({ scrollLeft: item.scrollWidth }, 500);
+            });
+        });
+    </script>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    '../www.googletagmanager.com/gtm5445.aspx?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MZ5SGHP');</script>
+    <!-- End Google Tag Manager -->
+
+    <script src="jquery-ui-1.11.4/external/jquery/jquery.js"></script>
+    <script src="jquery-ui-1.11.4/jquery-ui.js"></script>
+    <link href="jquery-ui-1.11.4/jquery-ui.css" rel="stylesheet" />
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.ajax({
+                url: 'MenuHandler.ashx',
+                method: 'get',
+                dataType: 'json',
+                success: function (data) {
+                    buildMenu($('#menu'), data);
+                    $('#menu').menu();
+                }
+            });
+
+            function buildMenu(parent, items) {
+                $.each(items, function () {
+                    var li = $('<li>' + this.MenuText + '</li>');
+                    if (!this.Active) {
+                        li.addClass('ui-state-disabled');
+                    }
+                    li.appendTo(parent);
+                    if (this.List && this.List.length > 0) {
+                        var ul = $('<ul></ul>');
+                        ul.appendTo(li);
+                        buildMenu(ul, this.List);
+                    }
+                });
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.ajax({
+                url: 'MenuHandler2.ashx',
+                method: 'get',
+                dataType: 'json',
+                success: function (data) {
+                    buildMenu($('#menu2'), data);
+                    $('#menu2').menu();
+                }
+            });
+
+            function buildMenu(parent, items) {
+                $.each(items, function () {
+                    var li = $('<li>' + this.MenuText + '</li>');
+                    if (!this.Active) {
+                        li.addClass('ui-state-disabled');
+                    }
+                    li.appendTo(parent);
+                    if (this.List && this.List.length > 0) {
+                        var ul = $('<ul></ul>');
+                        ul.appendTo(li);
+                        buildMenu(ul, this.List);
+                    }
+                });
+            }
+        });
+    </script>
+
+    <meta property="fb:pages" content="475676942459090" />
+    <style>
+        li > .menu-text{
+            width:10% !important;
+        }
+        .content-desc {
+            font-size: 17px !important;
+        }
+
+        .rmm-dropdown > a {
+            font-family: helvetica !important;
+            font-weight: bold !important;
+            color: #3766d6 !important;
+        }
+        .menu-text > div > a {
+            font-family: helvetica !important;
+            font-weight: bold !important;
+            color: #3766d6 !important;
+        }
+
+            a:hover {
+                transition: 0.6s;
+                color: #11224c !important;
+            }
+
+        .rmm.style ul li a {
+            color: #78909c;
+  font-size: 11pt !important;
+  font-weight: 600;
+  display: block;
+  padding: 17px 10px 6px;
+  text-decoration: none
+        }
+
+        .rmm.style ul li ul li {
+            color: #78909c;
+  font-size: 13pt !important;
+  font-weight: 600;
+  display: block;
+  text-decoration: none
+        }
+
+        .rmm.style ul ul{
+            margin-left:33.4px !important;
+            margin-top:0px !important;
+        } 
+        .rmm.style ul ul li {
+            margin-top:1px !important;
+            min-width: 220px !important;
+            font-weight: 500 !important;
+            font-size: 12px !important;
+            min-height: 36px !important;
+        }
+        .rmm.style ul ul li a{
+            padding: 0px !important;
+            background:none !important;
+            color:#3766d6 !important;
+        }
+        @media only screen and (max-width:800px)
+        {
+            .rmm.style ul ul{
+                min-width: 288px !important;
+            margin-left:15px !important;
+            margin-top:0px !important;
+        } 
+        .rmm.style ul ul li {
+            margin-left:45px !important;
+            margin-top:1px !important;
+            min-width: 168px !important;
+            font-weight: 300 !important;
+            font-size: 10px !important;
+            min-height: 36px !important;
+        }
+        }
+
+        .abc {
+            margin: 2px;
+        }
+
+        header .bg-img .circle .cont p {
+            margin-bottom: 25px;
+        }
+
+        .button-blue, .cool-button {
+            margin-right: 0px;
+        }
+
+            .cool-button a {
+                color: #fff;
+            }
+
+        header .hema-header {
+            background: url(images/hema.png) no-repeat;
+            height: 450px;
+            width: 360px;
+            top: 102px;
+            left: 803px;
+        }
+
+        .h2color {
+            color: #78909c;
+            text-decoration: none;
+        }
+
+            .h2color:hover {
+                color: #78909c;
+                text-decoration: none;
+            }
+
+        @media (max-width:992px) {
+            .circle .cont .img-responsive {
+                width: 80%
+            }
+        }
+    </style>
+
+    <style type="text/css">
+        footer a{
+            color:#337ab7 !important;
+        }
+        .carousel-inner {
+            height: 500px;
+        }
+
+        .navbar > .sticky {
+            background: white !important;
+        }
+
+        @media only screen and (max-width: 900px) {
+            .carousel-inner {
+                height: auto;
+            }
+        }
+    </style>
+
+
+    <style>
+        .showMainMenu {
+            max-width: 945px !important;
+        }
+
+
+        .list_style > li {
+            list-style-type: square !important;
+        }
+
+        .dropbtna {
+            background: rgba(69,66,60,.3);
+            color: #fff;
+            padding: 6px;
+            font-size: 13px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+
+        .dropdowna {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-contenta {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,.2);
+            z-index: 1;
+        }
+
+        .actived {
+            border-radius: 15px;
+            padding-bottom: 10px !important;
+        }
+
+        .dropdown-contenta a {
+            color: #000;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+            .dropdown-contenta a:hover {
+                background-color: #f1f1f1;
+            }
+
+        .dropdowna:hover .dropdown-contenta {
+            display: block;
+        }
+
+        #clickToShow {
+            min-width: 120px;
+        }
+
+        @media (min-width: 993px) {
+            .dspShow {
+                display: block !important;
+            }
+
+            .notshown {
+                display: none;
+            }
+        }
+
+        .show {
+            display: block;
+        }
+
+        .rmm.style ul ul li a {
+            text-transform: uppercase;
+            font-size: 10px;
+        }
+
+        .refineBtn {
+            text-align: center;
+            height: 40px;
+            line-height: 40px;
+            border: solid 1px #e1e1e1;
+            margin: 10px 0 20px 0;
+            cursor: pointer;
+            background: #f5f5f5;
+        }
+
+        .ais-hits--item {
+            max-width: inherit;
+            width: 33.3%;
+        }
+
+        .aa-input-container .input-group {
+            margin-top: 11px;
+        }
+
+        .height42 {
+            height: 42px !important;
+        }
+
+        .aa-suggestion {
+            padding: 0px !important;
+            padding-left: 0 !important;
+            cursor: pointer;
+            color: #000000;
+            margin-left: -4px;
+            font-size: 13px;
+            cursor: default !important;
+        }
+
+        .searchWidth {
+            background: #e8e8e8;
+            height: 64px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .aa-suggestion em {
+            font-style: normal;
+            font-weight: bold;
+        }
+        /*  start sarab css*/
+        .aa-dropdown-menu {
+            height: 301px;
+            position: relative;
+        }
+
+        .aa-dataset-1, .aa-dataset-2, .aa-dataset-3 {
+            padding: 16px;
+            display: inline-block;
+        }
+
+        .aa-suggestions-category {
+            text-transform: uppercase;
+            color: #222;
+        }
+
+        .aa-dataset-3 {
+            width: 24%;
+            float: left;
+            height: 295px;
+            overflow-y: auto;
+        }
+
+        .aa-dataset-1 {
+            border-left: 1px solid #e1e1e1;
+        }
+
+        .aa-dataset-2, .aa-dataset-1 {
+            width: 38%;
+        }
+
+        .algolia-autocomplete .aa-dropdown-menu {
+            left: 50% !important;
+            margin-left: -360px;
+            width: 800px !important;
+            border-top: 3px solid #2196f3 !important;
+            margin-top: 10px !important;
+        }
+
+        .aa-dataset-3 .aa-suggestion {
+            height: inherit;
+            border: none !important;
+        }
+
+        .aa-suggestion {
+            font-size: 16px;
+            height: 66px;
+            padding: 2px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+            .aa-suggestion img {
+                float: left;
+                padding-right: 8px;
+                padding-top: 4px;
+                display: block;
+                max-width: 64px;
+                height: auto;
+            }
+
+        .aa-dataset-3 .aa-suggestion span:nth-child(1) {
+            font-size: 13px;
+            padding-left: 6px;
+        }
+
+        .aa-suggestion div a span:nth-child(1) {
+            font-size: 14px;
+            color: #222;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: block;
+            padding-top: 2px;
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .aa-suggestion div span:nth-child(3) {
+            font-size: 12px;
+            color: #78909c;
+            display: block;
+        }
+
+        .aa-suggestion span:nth-child(3) {
+            font-size: 12px;
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .aa-suggestion span:nth-child(4) {
+            color: #0e94ff;
+            font-size: 14px;
+        }
+        /* End......*/
+        .viewAll {
+            display: block;
+            text-align: right;
+        }
+
+        #searchForMobile {
+            display: none;
+        }
+
+        @media (max-width:992px) {
+            .top-brdcrum-spc {
+                height: 0;
+            }
+
+            .lagforMob {
+                margin: 0 51px 0 11px;
+                position: relative;
+                overflow: hidden;
+                padding: 16px 10px !important;
+                color: #555 !important;
+                font-size: 13px !important;
+                /* border-bottom: 1px solid #ddd; */
+                font-weight: 600 !important;
+                text-transform: uppercase;
+            }
+
+            #searchForMobile {
+                display: block;
+            }
+
+            .searchWidth {
+                background: #ffffff;
+                height: 100vh;
+                position: fixed;
+                z-index: 1;
+                top: 0;
+            }
+
+            .mob-call {
+                left: 70%;
+            }
+
+            .m-freeDemo {
+                left: 43%;
+            }
+
+            .ais-search-box--reset, .ais-search-box--magnifier {
+                top: 31px;
+            }
+
+            #left-column {
+                padding: 0;
+                margin-bottom: 36px;
+            }
+
+            .ais-hits--item {
+                padding: 0;
+                width: 100%;
+            }
+
+            .showFilter {
+                display: block !important;
+            }
+
+            .max-width-rs {
+                max-width: 100% !important;
+            }
+        }
+
+        .aa-input-container {
+            display: inline-block;
+            position: relative;
+        }
+
+        .aa-input-search {
+            width: 300px;
+            border: 1px solid rgba(228, 228, 228, 0.6);
+            padding: 12px 28px 12px 12px;
+            box-sizing: border-box;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+
+            .aa-input-search::-webkit-search-decoration, .aa-input-search::-webkit-search-cancel-button, .aa-input-search::-webkit-search-results-button, .aa-input-search::-webkit-search-results-decoration {
+                display: none;
+            }
+
+        .aa-input-icon {
+            height: 16px;
+            width: 16px;
+            position: absolute;
+            top: 50%;
+            right: 16px;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+            fill: #e4e4e4;
+        }
+
+        .aa-dropdown-menu {
+            background-color: #fff;
+            border: 1px solid rgba(228, 228, 228, 0.6);
+            min-width: 300px;
+            margin-top: 10px;
+            box-sizing: border-box;
+        }
+
+        .aa-suggestion {
+            padding: 12px;
+            cursor: pointer;
+        }
+
+            .aa-suggestion + .aa-suggestion {
+                border-top: 1px solid rgba(228, 228, 228, 0.6);
+            }
+
+            .aa-suggestion:hover, .aa-suggestion.aa-cursor {
+                background-color: rgba(241, 241, 241, 0.35);
+            }
+
+        .aa-input-container .fa, #searchLink .fa, #searchLinkM .fa {
+            color: #ffffff;
+            font-size: 16px;
+            padding: 7px;
+        }
+
+        #searchLink {
+            /* margin-left: 10px;
+    margin-top: 11px; */
+        }
+
+        #clickToShow {
+            min-width: 66px;
+        }
+
+        .langArrow {
+            color: #fff;
+            font-size: 8px;
+            position: absolute !important;
+            top: 9px !important;
+            right: 5px;
+        }
+
+        .top-nav {
+            background: -webkit-linear-gradient(top, rgba(255, 255, 255, .8) 0%, rgba(0, 255, 255, 0.8) 100%) !important;
+        }
+
+        .indx > .sticky {
+            background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 100%, rgba(255, 255, 255, 1) 100%) !important;
+        }
+
+        #clickToShow a {
+            background: rgba(69,66,60,0.3);
+            padding: 6px;
+            padding-right: 16px;
+            color: white;
+            font-size: 10px;
+            margin-top: 11px;
+            border: none;
+            cursor: pointer;
+            border-radius: 3px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        a.prodBtn:hover {
+            color: #ffffff;
+        }
+
+        .input-group-btn {
+            top: 0;
+        }
+
+        .newColm {
+            height: 45px;
+            z-index: 100;
+            position: relative;
+            padding: 0;
+        }
+
+        .prplText {
+            color: #de0587;
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+            .prplText:hover, .prplText.active {
+                text-decoration: none;
+                color: #de0587;
+            }
+
+        @media (max-width:992px) {
+            #GenXLogo {
+                display: none;
+            }
+
+            .aa-input-container .fa, #searchLink .fa, #searchLinkM .fa {
+                color: #737373;
+                font-size: 25px;
+            }
+
+            .menutxt {
+                font-size: 10px;
+                color: #737373;
+                font-weight: 600;
+                margin-top: 46px;
+            }
+
+            #searchLinkM {
+                position: absolute;
+                top: 11px;
+                left: 50%;
+                margin-left: -18px;
+            }
+        }
+    </style>
+    <style type="text/css">
+        .rmm.style ul ul li {
+            max-width: 170px;
+            font-size: 18px !important;
+        }
+        .menu-text {
+            font-size: 25px;
+            padding-bottom: 2% !important;
+        }
+
+        .menu-text:hover {
+            font-size: 25px;
+            padding-bottom: 2% !important;
+        }
+
+        #menu {
+            background-color: #a8ffff !important;
+            margin-left: -15% !important;
+            color: black !important;
+        }
+
+        .ui-front {
+            background-color: #a8ffff !important;
+            color: black !important;
+        }
+
+        .ui-menu-item {
+            background-color: #a8ffff !important;
+            color: #3766d6 !important;
+        }
+
+        #menu:hover {
+            background-color: #a8ffff !important;
+            margin-left: !important;
+            color: black !important;
+        }
+
+        .ui-front:hover {
+            background-color: #a8ffff !important;
+            color: black !important;
+        }
+
+        .ui-menu-item:hover {
+            background-color: #a8ffff !important;
+            color: saddlebrown !important;
+        }
+
+        @media only screen and (max-width: 900px) {
+            #bg-img11 {
+                height: 200px !important;
+            }
+
+            #mainMenu {
+                width: 300px !important;
+            }
+
+            .menu-text {
+                font-size: 15px !important;
+                padding-bottom: 0% !important;
+            }
+
+                .menu-text:hover {
+                    font-size: 15px !important;
+                    padding-bottom: 0% !important;
+                }
+
+            li > span {
+                display: none !important;
+            }
+
+            .rmm.style ul {
+                max-width: 450px !important;
+                font-size: 10px !important;
+            }
+
+            .rmm.style > ul > li > ul > li > ul {
+                float: left;
+                position: absolute;
+                height: 100px;
+            }
+
+            .rmm.style ul ul li {
+                position: absolute;
+                max-width: 40px !important;
+                margin-left: -20%;
+                font-size: 10px;
+            }
+            /*.rmm.style > ul > ul {
+                            max-width: 30px !important;
+                            font-size: 10px !important;
+                        }
+
+                            .rmm.style > ul > ul > li {
+                                max-width: 70px !important;
+                                font-size: 10px !important;
+                            }*/
+        }
+
+        @media only screen and (min-width: 900px) {
+            .width860 {
+                width: 100% !important;
+            }
+
+            #menuW {
+                float: right !important;
+                margin-right: 10% !important;
+            }
+        }
+
+        a.gflag {
+            vertical-align: middle;
+            font-size: 16px;
+            padding: 1px 0;
+            background-repeat: no-repeat;
+            background-image: url(../gtranslate.net/flags/16.png);
+        }
+
+            a.gflag img {
+                border: 0;
+            }
+
+            a.gflag:hover {
+                background-image: url(../gtranslate.net/flags/16a.png);
+            }
+
+        #goog-gt-tt {
+            display: none !important;
+        }
+
+        .goog-te-banner-frame {
+            display: none !important;
+        }
+
+        .goog-te-menu-value:hover {
+            text-decoration: none !important;
+        }
+
+        body {
+            top: 0 !important;
+        }
+
+        #google_translate_element2 {
+            display: none !important;
+        }
+
+
+        .rght-arrow-bestseller {
+            display: inline;
+            height: 15px;
+            width: 65px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: url(images/Best-Seller-Button.png) no-repeat;
+        }
+    </style>
+
+    <style>
+        @font-face {
+            font-family: 'Titillium Web';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Titillium Web Regular'),local(TitilliumWeb-Regular),url(test-font/7XUFZ5tgS-tD6QamInJTcSo_WB_cotcEMUw1LsIE8mM.aspx) format("woff2");
+            unicode-range: U+0100-024F,U+1E00-1EFF,U+20A0-20AB,U+20AD-20CF,U+2C60-2C7F,U+A720-A7FF
+        }
+
+        @font-face {
+            font-family: 'Titillium Web';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Titillium Web Regular'),local(TitilliumWeb-Regular),url(https://www.GenX.co.in/test-font/7XUFZ5tgS-tD6QamInJTcZSnX671uNZIV63UdXh3Mg0.woff2) format("woff2");
+            unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215
+        }
+
+        @font-face {
+            font-family: 'Titillium Web';
+            font-style: normal;
+            font-weight: 600;
+            src: local('Titillium Web SemiBold'),local(TitilliumWeb-SemiBold),url(https://www.GenX.co.in/test-font/anMUvcNT0H1YN4FII8wpr_SNRT0fZ5CX-AqRkMYgJJo.woff2) format("woff2");
+            unicode-range: U+0100-024F,U+1E00-1EFF,U+20A0-20AB,U+20AD-20CF,U+2C60-2C7F,U+A720-A7FF
+        }
+
+        @font-face {
+            font-family: 'Titillium Web';
+            font-style: normal;
+            font-weight: 600;
+            src: local('Titillium Web SemiBold'),local(TitilliumWeb-SemiBold),url(https://www.GenX.co.in/test-font/anMUvcNT0H1YN4FII8wpr46gJz9aNFrmnwBdd69aqzY.woff2) format("woff2");
+            unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215
+        }
+
+        @font-face {
+            font-family: 'Titillium Web';
+            font-style: normal;
+            font-weight: 700;
+            src: local('Titillium Web Bold'),local(TitilliumWeb-Bold),url(https://www.GenX.co.in/test-font/anMUvcNT0H1YN4FII8wpr-y7CP8YvcHYdGV61pt7QTE.woff2) format("woff2");
+            unicode-range: U+0100-024F,U+1E00-1EFF,U+20A0-20AB,U+20AD-20CF,U+2C60-2C7F,U+A720-A7FF
+        }
+
+        @font-face {
+            font-family: 'Titillium Web';
+            font-style: normal;
+            font-weight: 700;
+            src: local('Titillium Web Bold'),local(TitilliumWeb-Bold),url(https://www.GenX.co.in/test-font/anMUvcNT0H1YN4FII8wprxP6Eu1_xfSBSoi9uie1FdE.woff2) format("woff2");
+            unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215
+        }
+
+        .loadingDiv {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: rgba(255,255,255,.8) url(https://www.GenX.co.in/images/loadingimage.gif) 50% 50% no-repeat
+        }
+
+        body.loading {
+            overflow: hidden
+        }
+
+            body.loading .loadingDiv {
+                display: block
+            }
+    </style>
+    <link href="bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style2787.css?v=0.9">
+    <link rel="stylesheet" type="text/css" href="css/mainff20.css?v=0.8">
+    <link rel="stylesheet" href="css/responsivemultimenu2787.css?v=0.9" type="text/css" />
+    <link rel="stylesheet" href="css/supplementff20.css?v=0.8" type="text/css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/instantsearch.min.css">
+    <link rel="stylesheet" type="text/css" href="css/search-stylef649.css?v=0.6">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header>
+            <div>
+                <div id="GenXLogo" class=" hidden-md hidden-lg hidden-xl mobHead">
+                    <a href="default.aspx">
+                        <img src="images/logo/GenX-mineral-ro-water-purifiers-logo.png" alt="" style="width: 69px;">
+                    </a>
+                </div>
+                <nav id="m-hide-mobForm" class="topnav indextop navbar navbar-default top-nav">
+                    <div class="topnav container-fluid padding-LR0">
+                        <div class="logo-md">
+                        </div>
+                        <div class="hidden-xs hidden-sm" style="margin-left: 8%;">
+                            <a href="default.aspx" class="topnav navbar-brand" style="width: 145px !important;">
+                                <img class="img-responsive" src="images/logo.png" alt="GenX Healthcare - Water Purifiers" title="GenX Healthcare - Water Purifiers" id="imglogo" style="height: 50px !important; width: 100%; background-color: ; padding: 5px;">
+                            </a>
+                        </div>
+
+                        <!-- <div id="menuW" class="rmm showMainMenu style" style="max-width:948px;"> -->
+                        <div id="menuW" class="rmm showMainMenu style">
+                            <div class="hidden-md hidden-lg hidden-lg">
+
+
+                                <div class="col-xs-2 newColm">
+                                    <div class="menutxt">
+                                        MENU
+                                    </div>
+                                </div>
+
+
+                                <div class="col-xs-2 newColm chait-intercome">
+                                </div>
+
+                                <div class="col-xs-4 newColm">
+                                    <div class="outerCircle" style="background: rgba(38, 96, 171, 1) !important">
+                                        <div class="hide-in-desk m-freeDemo" style="background: rgba(0, 255, 255, 0.7) !important">
+                                            <a href="default.aspx" class="prplText">HOME</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-2 newColm">
+                                </div>
+
+                                <div class="col-xs-2 newColm">
+                                    <span id="searchLinkM" class="mm hidden-md hidden-lg">
+                                        <i class="fa fa-search"></i>
+                                    </span>
+                                    <div class="menutxt">
+                                        SEARCH
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <ul id="mainMenu" style="opacity: 0;">
+                                <li class="menuHeaderCntner hidden-md hidden-lg hidden-xl">
+                                    <div id="backBox1">
+                                    </div>
+                                    <span id="sectionName">CATEGORIES
+                                    </span>
+                                </li>
+
+                                <li class="actived menu-text">
+                                    <div>
+                                        <span class="next-arrow effectBtn"></span>
+                                        <a href="default.aspx" class="first-level effectBtn" data-url="true">HOME
+                                        </a>
+                                    </div>
+                                </li>
+                                <li class="menu-text">
+                                    <div>
+                                        <span class="next-arrow effectBtn"></span>
+                                        <a href="about-us.aspx" class="first-level effectBtn" data-url="true">ABOUT <span class="lanHideClass">US<span>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li class="menu-text">
+                                    <div>
+                                        <span class="next-arrow effectBtn"></span>
+                                        <a href="product.aspx" class="first-level effectBtn" data-url="true">PRODUCTS
+                                        </a>
+                                    </div>
+                                </li>
+
+                                <%--<asp:Repeater ID="rpMenuCategory" runat="server" OnItemDataBound="Menu_ItemDataBound">
+                                    <ItemTemplate>
+                                        <li class="menu-text">
+                                            <div class="rmm-dropdown">
+                                                <span class="next-arrow effectBtn"></span>
+                                                <a href="waterpurifier.aspx" class="first-level effectBtn" data-url="true"><%# Eval("CategoryName") %>
+                                                </a>
+                                            </div>
+                                            <ul id="menu" class="level margin-left_4 padding-top6 second rmm-submenu ui-menu ui-widget ui-widget-content" role="menu"       tabindex="0" aria-activedescendant="ui-id-12">
+                                                <asp:Repeater ID="rpSubCategory" runat="server">
+                                                    <ItemTemplate>
+                                                        <li aria-haspopup="true" class="ui-menu-item" id="ui-id-1" tabindex="-1" role="menuitem">
+                                                            <span class="ui-menu-icon ui-icon ui-icon-carat-1-e"></span><%# Eval("SubName") %>
+                                                        </li>
+                                                    </ItemTemplate>
+                                                </asp:Repeater>
+                                            </ul>
+                                        </li>
+                                    </ItemTemplate>
+                                </asp:Repeater>--%>
+
+
+
+                                <%--<asp:Repeater ID="rpMenuCategory" runat="server" OnItemDataBound="Menu_ItemDataBound">
+                                    <ItemTemplate>
+                                        <li class="menu-text">
+                                            <div>
+                                                <span class="next-arrow effectBtn"></span>
+                                                <a href="waterpurifier.aspx" class="first-level effectBtn" data-url="true"><%# Eval("CategoryName") %>
+                                                </a>
+                                            </div>
+                                            <ul id="menu" class="level margin-left_4 padding-top6 second">
+                                                <asp:Repeater ID="rpSubCategory" runat="server" OnItemDataBound="menu_ItemDataBound2">
+                                                    <ItemTemplate>
+                                                        <li class="menu-text">
+                                                            <div>
+                                                                <span class="next-arrow effectBtn"></span>
+                                                                <a href="waterpurifier.aspx" class="first-level effectBtn" data-url="true"><%# Eval("SubName") %>
+                                                                </a>
+                                                            </div>
+                                                            <ul id="menu" class="level margin-left_4 padding-top6 second">
+                                                                <asp:Repeater ID="rpSubCategory" runat="server">
+                                                                    <ItemTemplate>
+                                                                        <li class="menu-text">
+                                                                            <div>
+                                                                                <span class="next-arrow effectBtn"></span>
+                                                                                <a href="waterpurifier.aspx" class="first-level effectBtn" data-url="true"><%# Eval("CategoryName") %>
+                                                                                </a>
+                                                                            </div>
+                                                                        </li>
+                                                                    </ItemTemplate>
+                                                                </asp:Repeater>
+                                                            </ul>
+                                                        </li>
+                                                    </ItemTemplate>
+                                                </asp:Repeater>
+                                            </ul>
+                                        </li>
+                                    </ItemTemplate>
+                                  </asp:Repeater>--%>
+
+
+                                <asp:Repeater ID="rpMenuCategory" runat="server" OnItemDataBound="Menu_ItemDataBound">
+                                    <ItemTemplate>
+                                        <li class="menu-text">
+                                            <div class="rmm-dropdown">
+                                                <span class="next-arrow effectBtn"></span>
+                                                <a href="redirection.aspx?purifier=<%# Eval("CategoryId") %>" class="first-level effectBtn" data-url="true"><%# Eval("CategoryName") %>
+                                                </a>
+                                            </div>
+                                            <ul id="menu" class="level margin-left_4 padding-top6 second rmm-submenu ui-menu ui-widget ui-widget-content" role="menu" tabindex="0" aria-activedescendant="ui-id-11">
+                                                <asp:Repeater ID="rpSubCategory" runat="server" OnItemDataBound="menu_ItemDataBound2">
+                                                    <ItemTemplate>
+                                                        <li aria-haspopup="true" class="ui-menu-item" id="ui-id-9" tabindex="-1" role="menuitem" style="font-weight:bold !important; font-size:13pt !important;"><span class="ui-menu-icon ui-icon ui-icon-carat-1-e rmm-dropdown"></span><a href="redirection.aspx?purifier=<%# Eval("CategoryId") %>"><%# Eval("SubName") %></a>
+                                                            <ul class="ui-menu ui-widget ui-widget-content ui-front" role="menu" aria-expanded="true" style="top: -1.4375px; left:186.406px;">
+                                                                <asp:Repeater ID="Subsubcagergory2" runat="server">
+                                                                      <ItemTemplate>
+                                                                      <li aria-haspopup="true" class="ui-menu-item" id="ui-id-10" tabindex="-1" role="menuitem" style="font-weight:bold !important; font-                     size:13pt !important;">
+                                                                          <span class="ui-menu-icon"></span><a href="redirection.aspx?purifier=<%# Eval("CategoryId") %>"><%# Eval("MiniName") %></a>
+                                                                      </li>
+                                                                      </ItemTemplate>
+                                                                </asp:Repeater>
+                                                            </ul>
+                                                        </li>
+                                                  </ItemTemplate>
+                                               </asp:Repeater>
+                                            </ul>
+                                        </li>
+                                    </ItemTemplate>
+                                </asp:Repeater>
+
+                                <li class="menu-text">
+                                    <div>
+                                        <span class="next-arrow effectBtn"></span>
+                                        <a href="contact.aspx" class="first-level hidden-xs hidden-sm" data-url="true">CONTACT <span class="lanHideClass">US</span>
+                                        </a>
+                                        <a href="contact.aspx" class="first-level effectBtn hidden-md hidden-lg hidden-xl" data-url="true">CONTACT <span class="lanHideClass">US</span>
+                                        </a>
+                                    </div>
+
+                                </li>
+                                <li style="border: none;">
+                                    <div id="searchLink" class="ss hidden-xs hidden-sm">
+                                        <i class="fa fa-search"></i>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div id="menuBlackout" class="blanketForMenu">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="searchSH" class="searchWidth" style="margin-top:-10px; background:-webkit-linear-gradient(bottom, rgba(255, 255, 255, .8) 0%, rgba(0, 255, 255, 0.8) 100%) !important;">
+                        <!-- HTML Markup -->
+                        <form>
+                            <div class="aa-input-container">
+                                <div class="col-xs-12 col-sm-12" style="margin-top:-9px; padding-left:250px;">
+                                    <div class="input-group">
+                                        <%--<input type="search" id="aa-search-input" autocomplete="off" name="q" class="form-control height42" placeholder="Search for GenX Products...">--%>
+                                        <asp:TextBox ID="searchproduct" runat="server" autocomplete="off" placeholder="Search for GenX Products..." class="form-control height42"></asp:TextBox>
+                                        <!--   <i class="fa fa-close"></i> -->
+                                        <i id="fa-icon" class="fa fa-close"></i>
+                                        <span class="input-group-btn">
+                                            <asp:Button ID="searchresult" Text="Submit" runat="server" class="btn btn-default height42" style="background:-webkit-linear-gradient(top, rgba(255, 255, 255, .8) 0%, rgba(0, 255, 255, 0.8) 100%) !important; color: white !important; font-size:16pt; font-weight:bold;" OnClick="searchresult_Click"/>
+                                            <%--<button class="btn btn-default height42" onclick="this.form.submit();" type="button" type="submit" id='go' style="background:-webkit-linear-gradient(top, rgba(255, 255, 255, .8) 0%, rgba(0, 255, 255, 0.8) 100%) !important; color: white !important; font-size:16pt; font-weight:bold;">
+                                                Search
+                                            </button>--%>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Include AlgoliaSearch JS Client and autocomplete.js library -->
+                    <script>
+                        //DOMContentLoaded - When DOM is loadded fully
+                        document.addEventListener("DOMContentLoaded", function (event) {
+
+                            var mHideMobForm = document.querySelector('#m-hide-mobForm');
+                            var w = window.innerWidth;
+                            var r = algoliasearch('ZSP31CUPKY', '200274eadd4d00e478efd35a00b9192f');
+                            var a = r.initIndex('GenXproducts_n');
+                            var f = r.initIndex('GenXproducts_n_price_asc');
+                            var t = r.initIndex('GenXcategories_n_new');
+                            if (w < 768) {
+                                console.log(w);
+                                searchinput.addEventListener('keypress', function () {
+                                    console.log('test');
+                                }
+                                    , false);
+                            }
+                            
+
+                        });
+                    </script>
+                </nav>
+                <section class="container" id="searchContainer" style='display: none;'>
+                    <div class="main-content container" style="margin-top: -7px; margin-bottom: 40px;">
+                        <!-- INTERFACE -->
+                        <main>
+                            <div id="filterShow" class="refineBtn hidden-md hidden-lg">
+                                Refine
+                            </div>
+                        </main>
+                        <!-- /INTERFACE -->
+                        <!-- /TEMPLATES -->
+                    </div>
+                </section>
+                <script>
+                    var searchLink = document.querySelector('#searchLink');
+                    var menuListMobile = document.querySelector('#menuW ul');
+                    var xbutton = document.querySelector('.fa-close');
+                    function showHidee(e) {
+
+                        searchSH.classList.toggle('showSearch');
+                        if (menuW.children[0].className == 'rmm-toggled rmm-view') {
+                        }
+                    }
+                    searchLink.addEventListener('click', showHidee, false);
+                    xbutton.addEventListener('click', showHidee, false);
+                    var clickToShow = document.querySelector('#clickToShow a');
+                    window.addEventListener('click', function (e) {
+                        if (document.getElementById('clickToShow').contains(e.target)) {
+                            showHide.classList.toggle('show');
+                        }
+                        else {
+                            showHide.classList.remove('show');
+                        }
+                    }
+                        , false);
+                    showHide.addEventListener('click', function (lung) {
+                        var lungName = lung.target.textContent;
+                        clickToShow.innerHTML = lungName + '<span class="glyphicon glyphicon-triangle-bottom langArrow" aria-hidden="true"></span>';
+                    }
+                        , false);
+
+                    var reduceFontID = document.getElementById('reduceFont');
+                    var lanHideClass = document.querySelectorAll('.lanHideClass');
+                    var langslactID = document.querySelector('#langslact');
+
+                    reduceFontID.addEventListener('click', function (f) {
+                        Array.from(lanHideClass).forEach(function (k) {
+                            console.log(k);
+                            k.style.display = 'none';
+                        })
+
+                    }, false);
+
+                    window.addEventListener('click', function (p) {
+                        if (reduceFontID.contains(p.target) || langslactID.contains(p.target)) {
+                            console.log(p);
+                        } else {
+                            Array.from(lanHideClass).forEach(function (k) {
+
+                                k.style.display = 'inline-block';
+                            })
+                        }
+                    })
+
+
+
+
+                </script>
+            </div>
+        </header>
+        <noscript>
+            <img height="1" width="1" style="display: none" alt="No Script" src="https://www.facebook.com/tr?id=1184872441598804&amp;ev=PageView&amp;noscript=1" />
+        </noscript>
+        <section class="width860" style="margin-bottom:0.5% !important;">
+            <div class="main-content">
+                <div class="bg-img">
+                    <!-- <div class="row">
+            <div class="col-sm-12 col-md-12 xs-12  text-center">
+			<figure>
+                    <img src="images/Christmas-banner.png" >
+              </figure>
+			
+			</div>
+		</div> -->
+
+                    <script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+                    <div class="bs-example">
+                        <!-- Button HTML (to Trigger Modal) -->
+                        <div id="myModal_video" class="modal fade">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <span id='video' data-dismiss="modal" class="deleteMeetingClose">&times;
+                                        </span>
+                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/plF7JvQC95M" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    ﻿<script type="text/javascript" src="../cdnjs.cloudflare.com/ajax/libs/ouibounce/0.0.11/ouibounce.min.js"></script>
+                    <div id="ouibounce-modal">
+                        <div class="blackOut">
+                            <div id="exitFormpopup" class="formCont"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <footer>
+                <style type="text/css">
+                    .visa-payment {
+                        left: 0px;
+                        width: 50px;
+                    }
+
+                    .master-payment {
+                        left: 2px;
+                        width: 50px;
+                    }
+
+                    .upi-payment {
+                        left: 2px;
+                        width: 50px;
+                    }
+
+                    .net-payment {
+                        left: 2px;
+                        width: 50px;
+                    }
+
+                    .wallet-payment {
+                        left: 2px;
+                        width: 50px;
+                    }
+
+                    .aaa {
+                        color: white !important;
+                    }
+
+                        .aaa:hover {
+                            color: cyan !important;
+                        }
+
+                    .logo {
+                        background-color: white !important;
+                    }
+
+                        .logo:hover {
+                            background-color: black !important;
+                            color: white !important;
+                        }
+
+                    .sec-container {
+                        margin-bottom: 30px !important;
+                    }
+                    .cool-button > a:hover{
+                        color: antiquewhite !important;
+                        text-decoration: none !important;
+                    }
+                </style>
+                <div class="container ">
+                    <div class="row ">
+                        <div class="col-sm-3 text-center">
+                            <div class="f-menu ">
+                                <h3>Products</h3>
+                                <ul class=" ">
+                                    <li><a class="aaa" href="water-purifiers/default.aspx">Water Purifiers</a></li>
+                                    <li><a class="aaa" href="air-purifiers/default.aspx">Air Purifiers</a></li>
+                                    <li><a class="aaa" href="water-softeners/default.aspx">Water Softeners</a></li>
+                                    <li><a class="aaa" href="cooking-appliances/default.aspx">Cooking Appliances</a></li>
+                                    <li><a class="aaa" href="vacuum-cleaner/default.aspx">Vacuum Cleaners</a></li>
+                                </ul>
+                                <nav class="nav icon-set" style="margin-top: 20px;">
+                                    <ul class="nav ">
+                                        <h3>PAYMENT MODES</h3>
+                                        <li class="visa-payment">
+                                            <img src="images/VISA.png" alt="visa Card"></li>
+                                        <li class="master-payment">
+                                            <img src="images/Master-Card.png" alt="Master card"></li>
+                                        <li class="upi-payment ">
+                                            <img src="images/UPI.png" alt="UPI"></li>
+                                        <li class="net-payment">
+                                            <img src="images/Netbanking.png" alt="Internet Banking">
+                                        </li>
+                                        <li class="wallet-payment">
+                                            <img src="images/Wallet.png" alt="Wallet">
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 text-center">
+                            <div class="f-menu ">
+                                <h3>Company</h3>
+                                <ul class=" ">
+                                    <li><a class="aaa" href="about-us.aspx">Overview</a></li>
+                                    <li><a class="aaa" href="awards.aspx">Awards & Recognitions</a></li>
+                                    <li><a class="aaa" href="certifications.aspx">Certifications</a></li>
+                                    <li><a class="aaa" href="become-trade-partner.aspx">Become a Trade Partner</a></li>
+                                    <li><a class="aaa" href="http://www.GenXrosystems.com/" target="_blank" rel="nofollow">GenX International</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 ">
+                            <div class="f-menu ">
+                                <h3>Support</h3>
+                                <ul class=" ">
+                                    <li><a class="aaa" href="customer-care-service.aspx">Customer Service</a></li>
+                                    <li><a class="aaa" href="dealer-locator.aspx">Where to buy</a></li>
+                                    <li><a class="aaa" href="downloads-press-kit.aspx">Press Kit</a></li>
+                                    <li><a class="aaa" href="office-locations.aspx">Offices</a></li>
+                                    <li><a class="aaa" href="http://careers.GenX.co.in/jobs/" rel="nofollow" target="_blank">Careers</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 ">
+                            <div class="f-menu ">
+                                <h3>Buy Now</h3>
+                                <ul class=" ">
+                                    <!--li><a href="https://shop.GenX.co.in/" target="_blank" rel="nofollow noopener">Online Store</a></li-->
+                                    <li><a class="aaa" href="terms-conditions.aspx">Terms & Conditions</a></li>
+                                    <li><a class="aaa" href="return-refund-policy.aspx">Return & Refund Policy</a></li>
+                                    <li><a class="aaa" href="billing-shipping-policy.aspx">Billing & Shipping Policy</a></li>
+                                    <li><a class="aaa" href="cookie-policy.aspx">Cookie Policy</a></li>
+                                </ul>
+                                <nav class="nav icon-set" style="margin-top: 20px;">
+                                    <h3>FOLLOW US</h3>
+                                    <ul class="nav ">
+                                        <li class="facebook"><a class="logo" href="https://www.facebook.com/GenXROSystemsLtd/" data-toggle="tooltip" title="Facebook" rel="nofollow"><i class="fa fa-facebook-official "></i></a></li>
+                                        <li class="twitter "><a class="logo" href="https://twitter.com/GenXrosystems" data-toggle="tooltip" title="Twitter" rel="nofollow"><i class="fa fa-twitter "></i></a></li>
+                                        <li class="linkedin "><a class="logo" href="https://in.linkedin.com/company/GenX-ro-systems-ltd-/" data-toggle="tooltip" title="LinkedIn" rel="nofollow"><i class="fa fa-linkedin "></i></a></li>
+                                        <li class="youtube"><a class="logo" href="https://www.youtube.com/user/GenXROSystemsLtd" data-toggle="tooltip" title="Youtube" rel="nofollow"><i class="fa fa-youtube"></i></a></li>
+                                        <li class="instagram"><a class="logo" href="https://www.instagram.com/GenXrosystems/" data-toggle="tooltip" title="instagram" rel="nofollow"><i class="fa fa-instagram"></i></a></li>
+
+
+
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bot-foot ">
+                        <div class="row ">
+                            <div class="col-xs-12 col-sm-6 ">
+                                <div class="copyright " style="font-size: 15px;">Copyright &copy; 2019 <a href="https://www.rssindia.com/" style="font-size: 15px; color: cyan!important;">RSS Infotech Pvt. Ltd.</a></div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 ">
+                                <ul class="policy">
+                                    <li><a class="aaa" href="disclaimer.aspx">Disclaimer</a> / </li>
+                                    <li><a class="aaa" href="privacy-policy.aspx">Privacy Policy</a> / </li>
+                                    <li><a class="aaa" href="blog/default.aspx">Blog</a> / </li>
+                                    <li><a class="aaa" href="sitemap.aspx">Site Map</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <script>
+
+            function onlyAllowChracter(e) {
+                var regex = new RegExp("^[a-zA-Z ]+$");
+                var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+                if (regex.test(str)) {
+                    return true;
+                } else if (e.which == 8) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
+            function onlyAllowNumber(e) {
+                evt = e;
+                evt = (evt) ? evt : window.event;
+                var charCode = (evt.which) ? evt.which : evt.keyCode;
+                if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                    return false;
+                }
+                return true;
+            }
+
+            function emailValidation(emailid) {
+                var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+                if (mailformat.test(emailid)) {
+                    return true
+                } else {
+                    return false
+                }
+            }
+
+            function PhoneNo(phone) {
+                var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+                if (phoneno.test(phone)) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
+            function ZipCode(Zip) {
+                var IndNum = /^\d{6}$/;
+                if (IndNum.test(Zip)) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
+            function namevalidation(id, val) {
+                if (val.match('^[a-zA-Z ]{3,80}$')) {
+                    $("#" + id).css('border-bottom', '');
+                    return true;
+                } else {
+                    $("#" + id).css('border-bottom', '1px solid red');
+                    return false;
+                }
+
+            }
+
+            function numbervalidation(id, val, len) {
+                if (PhoneNo(val) == true) {
+                    $("#" + id).css('border-bottom', '');
+                    return true;
+                } else {
+                    $("#" + id).css('border-bottom', '1px solid red');
+                }
+            }
+
+            function validationemail(id, val) {
+                if (emailValidation(val) == true) {
+                    $("#" + id).css('border-bottom', '')
+                    return true;
+                } else {
+                    $("#" + id).css('border-bottom', '1px solid red')
+                    return false;
+                }
+            }
+
+            function Zipcodevalidation(id, val) {
+                if (ZipCode(val) == true) {
+                    $("#" + id).css('border-bottom', '');
+                    return true
+                } else {
+                    $("#" + id).css('border-bottom', '1px solid red');
+                }
+            }
+            function CaptchaValidation(id, val) {
+
+                if (val.length == 5) {
+                    $("#" + id).css('border-bottom', '');
+
+                } else {
+                    $("#" + id).css('border-bottom', '1px solid red');
+                }
+
+                /*
+            	
+                if('35860' == val) {
+                $("#" + id).css('border-bottom', '');
+            	
+                } else {
+                $("#" + id).css('border-bottom', '1px solid red');
+                }*/
+
+            }
+
+
+
+
+
+
+
+
+
+
+        </script>
+
+        <script src="googleCssJs/jquery.1.12.4.min.js"></script>
+
+        <!-- Include AlgoliaSearch JS Client and autocomplete.js library -->
+        <script src="js/algoliasearch.min.js"></script>
+        <script src="js/autocomplete.min.js"></script>
+        <script>
+            var mHideMobForm = document.querySelector('#m-hide-mobForm');
+            var w = window.innerWidth;
+            var r = algoliasearch('ZSP31CUPKY', '200274eadd4d00e478efd35a00b9192f');
+            var a = r.initIndex('kentproducts_n');
+            var f = r.initIndex('kentproducts_n_price_asc');
+            var t = r.initIndex('kentcategories_n_new');
+            if (w < 768) {
+                console.log(w);
+                searchinput.addEventListener('keypress', function () {
+                    console.log('test');
+                }
+                    , false);
+            }
+            autocomplete('#aa-search-input', {
+            }
+                , [
+                    {
+                        source: autocomplete.sources.hits(a, {
+                            hitsPerPage: 0
+                        }),
+                        displayKey: '',
+                        templates: {
+                            suggestion: function (suggestion) {
+                                var sugTemplate = "";
+                                return sugTemplate;
+                            }
+                        }
+                    }
+                    ,
+                    {
+                        source: autocomplete.sources.hits(f, {
+                            hitsPerPage: 0
+                        }),
+                        displayKey: '',
+                        templates: {
+                            suggestion: function (suggestion) {
+                                var sugTemplate = "";
+                                return sugTemplate;
+                            }
+                        }
+                    }
+                    ,
+                    {
+                        source: autocomplete.sources.hits(t, {
+                            hitsPerPage: 0
+                        }),
+                        displayKey: '',
+                        templates: {
+                            header: '',
+                            suggestion: function (suggestion) {
+                                var sugTemplate = "";
+                                return sugTemplate;
+                            }
+                        }
+                    }
+                ]);
+        </script>
+        <!-- DO NOT MODIFY -->
+        <!-- Quora Pixel Code (JS Helper) -->
+        <script>
+            !function (q, e, v, n, t, s) { if (q.qp) return; n = q.qp = function () { n.qp ? n.qp.apply(n, arguments) : n.queue.push(arguments); }; n.queue = []; t = document.createElement(e); t.async = !0; t.src = v; s = document.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s); }(window, 'script', '../a.quora.com/qevents.js');
+            qp('init', 'c1fd9cd09f404cc18a801ff0a11e4cc4');
+            qp('track', 'ViewContent');
+        </script>
+        <noscript>
+            <img height="1" width="1" style="display: none" src="https://q.quora.com/_/ad/c1fd9cd09f404cc18a801ff0a11e4cc4/pixel?tag=ViewContent&amp;noscript=1" />
+        </noscript>
+        <!-- End of Quora Pixel Code -->
+
+
+
+        <!-- Global site tag (gtag.js) - Google Ads:787579017 -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-787579017"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'AW-787579017');
+        </script>
+        <!-- End Google Tag Manager (noscript) -->
+        <script type="application/ld+json">
+  {
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "url": "https://www.GenX.co.in/",
+  "name": "GenX RO Systems Ltd.",
+  "alternateName": "GenX RO Systems",
+  "description": "GenX offers best range of healthcare products and home appliances including Water Purifiers, Air purifiers, Smart Cooking Appliances and Vacuum Cleaners. We are the most trusted brand in healthcare and home appliances vertical.",
+  "logo": "https://www.GenX.co.in/images/logo/Healthcare-logo-with-tagline.png",
+  "email":"sales@GenX.co.in",
+  "areaServed":"IN",
+  "sameAs": [
+    "https://www.facebook.com/GenXROSystemsLtd",
+    "https://twitter.com/GenXrosystems",
+    "https://in.linkedin.com/company/GenX-ro-systems-ltd-",
+    "https://www.youtube.com/user/GenXROSystemsLtd",
+    "https://www.instagram.com/GenXrosystems/"
+   ],
+   "foundingDate":"1999",
+    "legalName": "GenX RO Systems Ltd.",
+    "founder": "XXXXXX",
+    "foundingLocation": "Noida, UP",
+    "brand":"GenX RO",
+    "numberOfEmployees":"3000+",
+    "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Sector 59",
+        "addressRegion": "Noida",
+        "postalCode": "201309",
+        "streetAddress": "E - 6, 7, 8"
+      },
+   "contactPoint": [{
+    "@type": "ContactPoint",
+    "telephone": "+91-9278912345",
+    "contactType": "customer service",
+    "areaServed": "IN"
+  },
+{   "@type": "ContactPoint",
+    "telephone": "+91-9582-123456",
+    "contactType": "sales",
+    "areaServed": "IN"
+  }]}
+        </script>
+        <!-- Google Tag Manager (noscript) -->
+        <noscript>
+            <iframe src="https://www.googletagmanager.com/ns.aspx?id=GTM-MZ5SGHP"
+                height="0" width="0" style="display: none; visibility: hidden"></iframe>
+        </noscript>
+        <!-- Fb Pixel Code -->
+        <script>
+            !function (f, b, e, v, n, t, s) {
+                if (f.fbq) return; n = f.fbq = function () {
+                    n.callMethod ?
+                        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                }; if (!f._fbq) f._fbq = n;
+                n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0;
+                t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s)
+            }(window,
+                document, 'script', 'local_cron_js/fbevents.js');
+            fbq('init', '1184872441598804'); /* Insert your pixel ID here. */
+            fbq('track', 'PageView');
+            $(document).ready(function () {
+                $('#select_language').change(function () {
+                    console.log('This is GenX....');
+                    if ($('#select_language').val() == 'np') {
+                        location.href = "ne-np/default.aspx";
+                    } else if ($('#select_language').val() == 'bn') {
+                        location.href = "bn-bd/default.aspx";
+                    } else if ($('#select_language').val() == 'kn') {
+                        location.href = "kn-in/default.aspx";
+                    } else if ($('#select_language').val() == 'hi') {
+                        location.href = "hi-in/default.aspx";
+                    } else {
+                        location.href = "default.aspx";
+                    }
+                });
+            });
+        </script>
+
+        <script>
+            $('.close').on("click", function () {
+                $(this).parents('div').hide();
+            });
+            var showHideDiv = document.querySelector('#showHideForm');
+            var formCont = document.querySelector('#formCont');
+            var canClose = document.querySelector('#canClose');
+
+            function moveIn() {
+                //console.log('in');
+                formCont.classList.remove('moveBack');
+                formCont.classList.add('sideBlockShow');
+            }
+
+            function moveOut() {
+                //console.log('out');
+                formCont.classList.remove('sideBlockShow');
+                formCont.classList.add('moveBack');
+            }
+            showHideDiv.addEventListener('click', moveIn, false);
+            iv.addEventListener('click', moveOut, false);
+            canClose.addEventListener('click', moveOut, false);
+        </script>
+        <!-- End code for right side Request a demo free supreeti -->
+
+        <script src="js/jquery-ui.js"></script>
+        <script type="text/javascript">
+            jQuery(document).ready(function () {
+                $('#f_name_cust').blur(function (e) {
+                    var a = $('#f_name_cust').val();
+                    if (a == "") {
+                        $("#errorname").css("display", "block");
+                        $("#errorname").css("color", "red");
+                        $("#errorname").aspx("Please enter your name!");
+                    } else if ($.isNumeric(a)) {
+                        $("#errorname").css("display", "block");
+                        $("#errorname").css("color", "red");
+                        $("#errorname").aspx("Name should not be number!");
+                        $("#f_name_cust").val("");
+                    } else {
+                        $("#errorname").css("display", "none");
+                    }
+                });
+                $('#contact_number_cust').blur(function (e) {
+                    var phon = $('#contact_number_cust').val();
+                    var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+                    if (phoneno.test(phon)) {
+                        $('#errorphone').css("display", "none");
+                    } else {
+                        $('#errorphone').css("display", "block");
+                        $('#errorphone').css("color", "red");
+                        $('#errorphone').aspx("Please enter valid phone number!");
+                        $('#contact_number_cust').val("");
+                    }
+                });
+                $('#email_cust').blur(function (e) {
+                    var emailid = $('#email_cust').val();
+                    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+                    if (mailformat.test(emailid)) {
+                        $('#erroremail').css("display", "none");
+                    } else {
+                        $('#erroremail').css("display", "block");
+                        $('#erroremail').css("color", "red");
+                        $('#erroremail').aspx("Invalid email id!");
+                        $('#email').val("");
+                    }
+                });
+                $('#zipcode_cust').blur(function (e) {
+                    var pin = $('#zipcode_cust').val();
+                    var zip = /(^\d{6}$)|(^\d{6}-\d{5}$)/;
+                    if (zip.test(pin)) {
+                        $('#errorpin').css("display", "none");
+                    } else {
+                        $('#errorpin').css("display", "block");
+                        $('#errorpin').css("color", "red");
+                        $('#errorpin').aspx("Please enter valid zipcode!");
+                        $('#zipcode_cust').val("");
+                    }
+                });
+            });
+        </script>
+        <!-- Bootstrap Core JavaScript -->
+        <script type="text/javascript" src="js/responsivemultimenu.js"></script>
+        <script>
+
+            $(document).ready(function () {
+                $("#captcha_val").css('border-bottom', '');
+                if (w < 992) {
+                    $('#ymDivCircle').addClass('chait-intercome');
+                    $('#ym-notification').addClass('chait-intercome');
+                }
+            });
+
+
+
+
+            // When the user scrolls down 500px from the top of the document, show the button
+            window.onscroll = function () {
+                scrollFunction();
+            };
+
+            //var countscroll = 0;
+            localStorage.setItem("countscroll", 0);
+            function scrollFunction() {
+                var heightOfWindow = window.innerHeight;
+                var contentScrolled = window.pageYOffset;
+                var bodyHeight = window.document.getElementsByTagName("body")[0].offsetHeight;
+                var pagepercentage = 0;
+                if (bodyHeight - contentScrolled <= heightOfWindow) {
+                    pagepercentage = "100%";
+                } else {
+                    var total = bodyHeight - heightOfWindow;
+                    var got = contentScrolled;
+                    pagepercentage = parseInt((got / total) * 100);
+                }
+                var getcountscroll = localStorage.getItem("countscroll");
+            }
+        </script>
+
+        <script type="text/javascript">
+
+
+
+
+            function googleTranslateElementInit2() {
+                new google.translate.TranslateElement({
+                    pageLanguage: 'en', autoDisplay: false
+                }
+                    , 'google_translate_element2');
+            }
+        </script>
+        <script async type="text/javascript" src="../translate.google.com/translate_a/element7876.aspx?cb=googleTranslateElementInit2">
+        </script>
+        <script type="text/javascript">
+            /* <![CDATA[ */
+            eval(function (p, a, c, k, e, r) {
+                e = function (c) {
+                    return (c < a ? '' : e(parseInt(c / a))) + ((c = c % a) > 35 ? String.fromCharCode(c + 29) : c.toString(36))
+                };
+                if (!''.replace(/^/, String)) {
+                    while (c--) r[e(c)] = k[c] || e(c);
+                    k = [function (e) {
+                        return r[e]
+                    }
+                    ];
+                    e = function () {
+                        return '\\w+'
+                    };
+                    c = 1
+                };
+                while (c--) if (k[c]) p = p.replace(new RegExp('\\b' + e(c) + '\\b', 'g'), k[c]);
+                return p
+            }
+                ('6 7(a,b){n{4(2.9){3 c=2.9("o");c.p(b,f,f);a.q(c)}g{3 c=2.r();a.s(\'t\'+b,c)}}u(e){}}6 h(a){4(a.8)a=a.8;4(a==\'\')v;3 b=a.w(\'|\')[1];3 c;3 d=2.x(\'y\');z(3 i=0;i<d.5;i++)4(d[i].A==\'B-C-D\')c=d[i];4(2.j(\'k\')==E||2.j(\'k\').l.5==0||c.5==0||c.l.5==0){F(6(){h(a)},G)}g{c.8=b;7(c,\'m\');7(c,\'m\')}}', 43, 43, '||document|var|if|length|function|GTranslateFireEvent|value|createEvent||||||true|else|doGTranslate||getElementById|google_translate_element2|innerHTML|change|try|HTMLEvents|initEvent|dispatchEvent|createEventObject|fireEvent|on|catch|return|split|getElementsByTagName|select|for|className|goog|te|combo|null|setTimeout|500'.split('|'), 0, {
+                }
+                ))
+  /* ]]> */
+
+        </script>
+
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", function (event) {
+
+                $(document).ready(function () {
+                    $('.deleteMeetingClose').on('click', function (event) {
+                        event.preventDefault();
+                        $(this).next('iframe').attr('src', $("span").next('iframe').attr('src'));
+                    })
+                });
+
+                function closeWindow() {
+                    document.getElementById('ouibounce-modal').style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                    formCont.style.display = 'block';
+                }
+
+                function setCookie_pop(cname, cvalue) {
+                    var d = new Date();
+                    d.setTime(d.getTime() + (1800 * 1000));
+                    var expires = "expires=" + d.toGMTString();
+                    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+                }
+
+                function setCookie(cname, cvalue, exdays) {
+                    var d = new Date();
+                    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+                    var expires = "expires=" + d.toGMTString();
+                    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+                }
+
+                function getCookie(cname) {
+                    var name = cname + "=";
+                    var decodedCookie = decodeURIComponent(document.cookie);
+                    var ca = decodedCookie.split(';');
+                    for (var i = 0; i < ca.length; i++) {
+                        var c = ca[i];
+                        while (c.charAt(0) == ' ') {
+                            c = c.substring(1);
+                        }
+                        if (c.indexOf(name) == 0) {
+                            return c.substring(name.length, c.length);
+                        }
+                    }
+                    return "";
+                }
+
+                var gcooklang = getCookie('googtrans');
+                var googlelangarray = { en: "English", hi: "हिंदी", bn: "বাংলা", gu: "ગુજરાત", mr: "मराठी", ne: "नेपाली", pa: "ਪੰਜਾਬੀ", ta: "ਤਾਮਿਲ", kn: "ಕನ್ನಡ", te: "తెలుగు", ur: "اردو", es: "Español", fr: "français" };
+                if (gcooklang != "") {
+                    var cagooale = gcooklang.split('default.aspx');
+                    var clickToShow1 = document.querySelector('#clickToShow a');
+                    clickToShow1.innerHTML = googlelangarray[cagooale[2]] + '<span class="glyphicon glyphicon-triangle-bottom langArrow" aria-hidden="true"></span>';
+                }
+                var sideFormCont = document.querySelector('.sideBlockHide');
+                if (w > 992) {
+                    window.addEventListener('click', function (e) {
+                        if (document.getElementById('formCont').contains(e.target)) {
+                            sideFormCont.classList.add('sideBlockShow');
+                        } else if (formCont.className == 'sideBlockHide sideBlockShow') {
+                            sideFormCont.classList.remove('sideBlockShow');
+                            sideFormCont.classList.add('moveBack');
+                        }
+                    }, false);
+                }
+
+                //==================+++++++ START menu Back and forth +++++===============
+                var getToggle = document.querySelector('#menuW .rmm-toggled');
+                var menuArea = document.querySelector('.rmm-mobile');
+                var menuBlackout = document.querySelector('#menuBlackout');
+                var backArrowN = document.querySelector('#backArrow');
+                var backLevelOne = document.querySelectorAll('.firstLevel');
+                var backLevelTwo = document.querySelectorAll('.secondLevel');
+                var mainMenuID = document.querySelector('#mainMenu');
+                var mainMenuA = document.querySelectorAll('#mainMenu li a');
+                var mainMenuLI = document.querySelectorAll('#mainMenu li');
+                var mainMenuUL = document.querySelector('#mainMenu li ul');
+                var mainMenuBlock = document.querySelectorAll('#mainMenu .next-arrow');
+                var sectionName = document.querySelector('#sectionName');
+                var firstSubMenu = document.querySelector('.rmm-submenu');
+                var slideLayers = document.querySelectorAll('.second');
+                var slideLayers2 = document.querySelectorAll('.menuTopSpacing');
+                var hideSlide = document.querySelector('.menuTopSpacing');
+                var clickToShowSA = document.querySelector('#clickToShowSA');
+                var getPagtURL = document.URL;
+                var navbar = document.getElementById("floatMenu");
+                var GenXLogo = document.getElementById('GenXLogo');
+                var backLavel, levelOneBack, levelTwoBack, menuHeadingName, pageCategory, hrefURL, link;
+                var chatShowHide;
+                var blockDivScroll = document.querySelectorAll('.second li div .next-arrow');
+                var blockDivScrollMain = document.querySelectorAll('#mainMenu li div .next-arrow');
+                var parntHeight, grandParent;
+
+                //...................scroll for last lavel problem solved................
+                Array.from(blockDivScroll).forEach(function (k) {
+                    k.addEventListener('click', function (e) {
+                        parntHeight = e.target.parentNode.parentNode.parentNode;
+                        parntHeight.style.overflowY = 'hidden';
+                        parntHeight.scrollTop = 0;
+                    }, false)
+                })
+
+                Array.from(blockDivScrollMain).forEach(function (k) {
+                    k.addEventListener('click', function (e) {
+                        grandParent = e.target.parentNode.parentNode.parentNode;
+                        // grandParent.style.overflowY = 'hidden';
+                        grandParent.scrollTop = 0;
+                    }, false)
+                })
+
+                //................menu delay loading to remove
+                setTimeout(function () {
+                    var menuDelay = document.getElementById('mainMenu');
+                    menuDelay.style.opacity = '1';
+                }, 1000);
+
+                //............. page should be open if user is inside and removed Div when user click on link not the arrow
+                GenXLogo.style.display = 'none';
+                function doSomthing() {
+                    Array.from(mainMenuA).forEach(function (g) {
+                        hrefURL = g.getAttribute('href');
+                        //...............language slider
+                        g.addEventListener('click', function (clickLink) {
+                            function resetScreen() {
+                                menuBlackout.style.display = 'none';
+                                if (w < 992) {
+                                    showHide.className = 'level margin-left_4 padding-top6 second rmm-submenu';
+                                }
+                                window.document.body.style.overflowY = 'auto';
+                            }
+                            setTimeout(resetScreen, 800);
+                        })
+                        if (getPagtURL.indexOf(hrefURL) != -1) {
+                            var divClassName = g.className;
+                            slideLanguage()
+                            blackOutScreen();
+                            backArrowOne();
+                            backArrowTwo();
+                            scrollDetect();
+                            if (getPagtURL == 'https://www.GenX.co.in/' || getPagtURL == 'https://kuat.GenX.co.in/' || getPagtURL == 'http://localhost:8585/GenX_Live/') {
+                                GenXLogo.style.display = 'none';
+                            } else if (getPagtURL == 'https://www.GenX.co.in/freedemo-mobile' || getPagtURL == 'https://kuat.GenX.co.in/freedemo-mobile' || getPagtURL == 'http://localhost:8585/GenX_Live/freedemo-mobile') {
+                                var menuMain = document.getElementById('m-hide-mobForm');
+                                menuMain.style.display = 'none'
+                            }
+                        }
+                    })
+                }
+
+                doSomthing();
+
+                function changeToAsItIs() {
+                    var getClass = Array.from(document.querySelectorAll('.active-links'));
+                    getClass.forEach(function (takeClass) {
+                        takeClass.setAttribute('class', 'rmm-dropdown');
+                    });
+                }
+
+                // .................manu bg blanket for mobile
+                function blackOutScreen() {
+                    var chatShowHide = document.querySelector('#ymPluginDivContainerInitial');
+                    if (chatShowHide) {
+                        chatShowHide.style.zIndex = '100';
+                    }
+                    getToggle.addEventListener('click', function (e) {
+                        menuArea.style.left = "";
+                        if (chatShowHide) {
+                            chatShowHide.style.zIndex = '0';
+
+                        }
+                        menuArea.classList.add('put');
+                        setTimeout(function () {
+                            menuArea.style.left = "0";
+                            menuArea.classList.remove('put');
+                        }, 500);
+                        menuBlackout.style.display = 'block';
+                        document.body.style.overflowY = 'hidden';
+                        menuBlackout.addEventListener('click', function () {
+                            menuArea.classList.remove('put');
+                            // ............close all open menu after clicking manu blanket (reset menu)
+                            setTimeout(function () {
+                                changeToAsItIs();
+                                if (chatShowHide) {
+                                    chatShowHide.style.zIndex = '100';
+                                }
+                                menuBlackout.style.display = 'none';
+                                showHide.classList.remove('rmm-subview');
+                                Array.from(slideLayers).forEach(function (closeOpenMenu) {
+                                    mainMenuID.style.overflowY = 'auto';
+                                    mainMenuID.scrollTop = 0;
+                                    closeOpenMenu.className = 'level margin-left_4 padding-top6 second rmm-submenu';
+                                    window.document.body.style.overflowY = 'auto';
+                                })
+                                Array.from(slideLayers2).forEach(function (closeOpenMenu2) {
+                                    mainMenuID.style.overflowY = 'auto';
+                                    mainMenuID.scrollTop = 0;
+                                    closeOpenMenu2.className = 'menuTopSpacing rmm-submenu';
+                                    window.document.body.style.overflowY = 'auto';
+                                })
+                            }, 600)
+                        }, false);
+                    })
+                }
+
+                // .....................language click open
+                function slideLanguage() {
+                    clickToShowSA.addEventListener('click', function () {
+                        showHide.style.left = '-340px'
+                        showHide.classList.add('rmm-subview');
+                    })
+                }
+
+                //..................one step back
+                function backArrowOne() {
+                    Array.from(backLevelOne).forEach(function (backOne) {
+                        backOne.addEventListener('click', function (k) {
+                            levelOneBack = k.target.parentNode.parentNode;
+                            k.target.parentNode.parentNode.parentNode.parentNode.style.overflowY = 'auto';
+                            levelOneBack.className += ' closeBackOne';
+                            setTimeout(removeCloseOneCss, 600);
+                        })
+                    })
+                }
+
+                //..................secon step back
+                function backArrowTwo() {
+                    Array.from(backLevelTwo).forEach(function (backTwo) {
+                        backTwo.addEventListener('click', function (v) {
+                            parntHeight.style.overflowY = 'auto';
+                            levelTwoBack = v.target.parentNode.parentNode;
+                            levelTwoBack.className += ' closeBackOne';
+                            // levelTwoBack.classList.remove('rmm-subview');
+                            setTimeout(removeCloseTwoCss, 600);
+                        })
+                    })
+                }
+
+                function removeCloseOneCss() {
+                    levelOneBack.className = 'level margin-left_4 padding-top6 second rmm-submenu ';
+                }
+
+                function removeCloseTwoCss() {
+                    levelTwoBack.className = 'menuTopSpacing rmm-submenu ';
+                }
+
+                //................................Swipe Slider................................................
+
+                var _startX = 0;
+                var _offsetX = 0;
+                var boxT, boxk;
+                var currentX = 0;
+                var diff;
+                mainMenu.ontouchstart = downFunction;
+
+                function downFunction(e) {
+                    mainMenu.ontouchmove = moveFunction;
+                    diff = 300 - (e.touches ? e.touches[0].pageX : e.pageX);
+                }
+
+                function moveFunction(e) {
+                    mainMenu.ontouchend = upFunction;
+                    boxT = document.getElementById('mainMenu');
+                    boxT.classList.remove('put');
+                    currentX = e.touches ? e.touches[0].pageX : e.pageX;
+                    boxT.style.left = (((currentX + diff) - 300) * 1.20) + 'px';
+
+                    if ((currentX + diff) > 300) {
+                        boxT.style.left = '0';
+                    }
+                }
+
+                function upFunction(e) {
+                    boxk = document.getElementById('mainMenu');
+                    document.onmousemove = null;
+                    boxT = null;
+                    if ((currentX + diff) >= 120) {
+                        boxk.classList.add('slide');
+                        setTimeout(removeMax, 500);
+                    } else if ((currentX + diff) <= 119) {
+                        boxk.classList.add('removeS');
+                        setTimeout(removeMin, 500);
+                    }
+                }
+
+                function removeMax() {
+                    boxk.style.left = '0';
+                    boxk.classList.remove('slide');
+                }
+
+                function removeMin() {
+                    boxk.style.left = "-310px";
+                    boxk.classList.remove('removeS');
+                    menuBlackout.style.display = 'none';
+                    currentX = 150;
+                    Array.from(slideLayers).forEach(function (closeOpenMenu) {
+                        closeOpenMenu.className = 'level margin-left_4 padding-top6 second rmm-submenu';
+                        window.document.body.style.overflowY = 'auto';
+                    })
+                    Array.from(slideLayers2).forEach(function (closeOpenMenu2) {
+                        closeOpenMenu2.className = 'menuTopSpacing rmm-submenu';
+                        window.document.body.style.overflowY = 'auto';
+                    });
+                    changeToAsItIs()
+                }
+                //..............................END swipw slider...........................................
+
+                if (navbar != null) {
+                    var sticky = navbar.offsetTop;
+                }
+
+                //...... bottom menu in mobile will show/hide when user scroll
+                function scrollDetect() {
+                    if (w < 992) {
+
+
+
+
+                        var topNav = document.querySelector('.top-nav');
+                        var ymDivCircle = document.querySelector('#ymDivCircle');
+                        var lastScroll = 0;
+                        window.onscroll = function () {
+                            var currentScroll = document.documentElement.scrollTop || document.body.scrollTop; // Get Current Scroll Value
+                            topNav.classList.remove("go");
+                            topNav.classList.remove("come");
+                            if (currentScroll > 0 && lastScroll <= currentScroll) {
+                                lastScroll = currentScroll;
+                                topNav.classList.add("go");
+                                if (navbar) {
+                                    myFunction(sticky);
+                                }
+                            } else {
+                                lastScroll = currentScroll;
+                                topNav.classList.add("come");
+                                if (navbar) {
+                                    myFunction(sticky);
+                                }
+                            }
+                        };
+                    }
+                }
+
+                scrollDetect();
+
+                //...... product filter and sort fixed at to when user scroll
+                function myFunction(sticky) {
+                    if (window.pageYOffset >= sticky) {
+                        navbar.classList.add("sticky");
+                    } else {
+                        navbar.classList.remove("sticky");
+                    }
+                }
+                //....................Feature Tab Script//
+                var checkClick = document.querySelector('#selectedTab');
+                var floatMenuVar = document.querySelector('#floatMenu');
+                var tabLink = document.querySelectorAll('#featuresTab li a')
+                var currentLocation;
+
+                if (checkClick != null) {
+                    checkClick.addEventListener('click', function (c) {
+                        document.getElementById('floatMenu').classList.toggle('linkHeight');
+                        document.getElementById('arrowRotate').classList.toggle('rotate');
+                    }, false);
+                }
+
+                window.addEventListener('click', function (e) {
+                    if (checkClick != null) {
+                        if (checkClick.contains(e.target)) {
+                        } else {
+                            document.getElementById('floatMenu').classList.remove('linkHeight');
+                        }
+                    }
+                })
+
+                Array.from(tabLink).forEach(function (g) {
+                    g.addEventListener('click', function () {
+                        document.getElementById('arrowRotate').classList.toggle('rotate');
+                        document.getElementById('floatMenu').classList.remove('linkHeight');
+                    })
+                });
+
+            });
+
+        </script>
+
+        <!-- DO NOT MODIFY -->
+        <!-- Quora Pixel Code (JS Helper) -->
+        <script>
+            !function (q, e, v, n, t, s) { if (q.qp) return; n = q.qp = function () { n.qp ? n.qp.apply(n, arguments) : n.queue.push(arguments); }; n.queue = []; t = document.createElement(e); t.async = !0; t.src = v; s = document.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s); }(window, 'script', '../a.quora.com/qevents.js');
+            qp('init', 'c1fd9cd09f404cc18a801ff0a11e4cc4');
+            qp('track', 'ViewContent');
+        </script>
+        <noscript>
+            <img height="1" width="1" style="display: none" src="https://q.quora.com/_/ad/c1fd9cd09f404cc18a801ff0a11e4cc4/pixel?tag=ViewContent&amp;noscript=1" />
+        </noscript>
+        <!-- End of Quora Pixel Code -->
+
+
+
+        <!-- Global site tag (gtag.js) - Google Ads:787579017 -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-787579017"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'AW-787579017');
+        </script>
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArm0SRgqqaVEvoKoQdDkSnAZXkckJE2x4&amp;sensor=true&amp;libraries=places&amp;language=en"></script>
+
+        <script>
+            var options = {
+                types: ['(cities)'],
+                componentRestrictions: { country: "in" }
+            };
+
+            var componentForm = {
+                street_number: 'short_name',
+                route: 'long_name',
+                locality: 'long_name',
+                administrative_area_level_1: 'long_name',
+                country: 'long_name',
+                postal_code: 'short_name'
+            };
+
+            var input = document.getElementById('city_geo');
+            var autocomplete = new google.maps.places.Autocomplete(input, options);
+            autocomplete.addListener('place_changed', fillInAddress);
+
+            function fillInAddress() {
+                // Get the place details from the autocomplete object.
+                var place = autocomplete.getPlace();
+                // Get each component of the address from the place details
+                // and fill the corresponding field on the form.
+                for (var i = 0; i < place.address_components.length; i++) {
+                    var addressType = place.address_components[i].types[0];
+                    if (componentForm[addressType] && addressType == 'locality') {
+                        var val = place.address_components[i][componentForm[addressType]];
+                        document.getElementById('city_geo').value = val;
+                    }
+                }
+            }
+
+        </script>
+
+
+
+
+        <!-- for the city suggestion end  -->
+
+        <!-- Facebook Pixel Code -->
+        <!-- Add Pixel Events to the button's click handler -->
+
+        <script>
+            function changePosition() {
+                if (crossPosition != null) {
+                    var crossPosition = document.querySelector('#ym-notification .close');
+                    // var crossPosition = selectDiv.('div font font');
+                    // console.log(crossPosition);
+                    crossPosition.innerHTML = '';
+                    crossPosition.setAttribute('class', 'closeicon');
+                    crossPosition.style.top = '4px';
+                    crossPosition.style.right = '-12px';
+                    crossPosition.style.opacity = '.4';
+                }
+            }
+            setTimeout(changePosition, 3000);
+
+            $(".effectBtn").click(function (e) {
+
+                // Remove any old one
+                $(".ripple").remove();
+
+                // Setup
+                var posX = $(this).offset().left,
+                    posY = $(this).offset().top,
+                    buttonWidth = $(this).width(),
+                    buttonHeight = $(this).height();
+
+                // Add the element
+                $(this).prepend("<span class='ripple'></span>");
+
+                // Make it round!
+                if (buttonWidth >= buttonHeight) {
+                    buttonHeight = buttonWidth;
+                } else {
+                    buttonWidth = buttonHeight;
+                }
+
+                // Get the center of the element
+                var x = e.pageX - posX - buttonWidth / 2;
+                var y = e.pageY - posY - buttonHeight / 2;
+
+                // Add the ripples CSS and start the animation
+                $(".ripple").css({
+                    width: buttonWidth,
+                    height: buttonHeight,
+                    top: y + 'px',
+                    left: x + 'px'
+                }).addClass("rippleEffect");
+
+            });
+
+
+
+
+            setTimeout(function () {
+                if (w < 992) {
+                    $('#ymDivCircle img').addClass('chait-intercome');
+                    $('#ym-notification').addClass('chait-intercome');
+                }
+            }, 10000);
+
+
+        </script>
+        <script>
+            $(window).scroll(function () {
+                $(this).scrollTop() > 1 ? $(".navbar").addClass("sticky ") : $(".navbar").removeClass("sticky ")
+            }
+            ), $(document).ready(function () {
+                $("#close-all").css("display", "none"), $("#open-all").click(function () {
+                    $(this).css("display", "none"), $("#close-all").hide(), $("#close-all").show(), $(".ico").removeClass("collapsed"), $(".panel-collapse").addClass("in").attr("style", null)
+                }
+                ), $("#close-all").click(function () {
+                    $(this).css("display", "none"), $("#close-all").hide(), $("#open-all").show(), $(".ico").addClass("collapsed"), $(".panel-collapse").removeClass("in").attr("style", null)
+                }
+                ), $(".sub-menu").click(function () {
+                    $(".down-arrow").removeClass("up-arrow"), $(this).parent().find(".down-arrow").addClass("up-arrow")
+                }
+                ), $("#water_pu").click(function () {
+                    $(".level_menu").css("display", "block")
+                }
+                ), $(".link").click(function () {
+                    $(".level_menu").css("display", "none"), $(".level2_menu").css("display", "none")
+                }
+                ), $(".demobutton").click(function () {
+                    $(".form-hide").toggle("form-show"), $(".down-arrow").toggleClass("up-arrow")
+                }
+                ), $(".link-heading").on("mouseenter", function (l) {
+                    $(".sub-link-1").is(":visible") ? (l.preventDefault(), $(".sub-link-1").hide()) : (l.preventDefault(), $(".sub-link-1").hide(), $(this).parent().find(".sub-link-1").show())
+                }
+                ), $(".sub-link").on("mouseenter", function (l) {
+                    l.preventDefault(), $(".sub-link-2-container").hide(), $(this).parent().find(".sub-link-2-container").show()
+                }
+                )
+            }
+            ), $("span a").on("mouseover", function () {
+                $(this).css("color", "white")
+            }
+            )
+        </script>
+        <script src="js/jquery.fractionslider.js" type="text/javascript" charset="utf-8"></script>
+        <!-- GenX RO PRODUCT SEARCH -->
+
+        <script src="../cdn.jsdelivr.net/npm/instantsearch.js%402.3/dist/instantsearch.min.js"></script>
+    </form>
+</body>
+</html>
